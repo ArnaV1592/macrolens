@@ -1,0 +1,19 @@
+name: intraday
+on:
+  schedule:
+    - cron: "*/15 3-10 * * 1-5"   # every 15 min during market hours
+  workflow_dispatch:
+jobs:
+  intraday:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install yfinance numpy httpx groq psycopg2-binary
+      - run: python intraday.py
+        env:
+          SUPABASE_PG_DSN: ${{ secrets.SUPABASE_PG_DSN }}
+          GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
+          TG_BOT_TOKEN:    ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID:      ${{ secrets.TG_CHAT_ID }}
