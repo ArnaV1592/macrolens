@@ -19,7 +19,7 @@ import pandas as pd
 WATCHLIST = ["SBIN.NS", "RELIANCE.NS", "INFY.NS", "TCS.NS", "LT.NS", "SBIN.NS"]
 
 LOOKBACK_DAYS = 20
-Z_THRESHOLD   = 2.5
+Z_THRESHOLD   = 4.0
 PERIOD        = "2y"   # bump to "5y" for stricter test
 
 def backtest_one(symbol):
