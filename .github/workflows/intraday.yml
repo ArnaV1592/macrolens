@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main  # Explicitly checkout from main branch
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install yfinance numpy httpx groq psycopg2-binary
