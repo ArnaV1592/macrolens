@@ -16,11 +16,7 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 
-WATCHLIST = [
-    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS",
-    "SBIN.NS", "ADANIENT.NS", "BHARTIARTL.NS", "LT.NS", "ITC.NS",
-    "AXISBANK.NS", "MARUTI.NS",
-]
+WATCHLIST = ["SBIN.NS", "RELIANCE.NS", "INFY.NS", "TCS.NS", "LT.NS", "SBIN.NS"]
 
 LOOKBACK_DAYS = 20
 Z_THRESHOLD   = 2.5
