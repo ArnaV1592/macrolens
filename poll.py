@@ -23,7 +23,10 @@ GROQ_KEY = os.environ["GROQ_API_KEY"]
 TG_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_CHAT  = os.environ["TG_CHAT_ID"]
 
-WATCHLIST = ["SBIN.NS", "RELIANCE.NS", "INFY.NS", "TCS.NS", "LT.NS", "SBIN.NS"]
+WATCHLIST = {
+    "SBIN.NS":     ["state bank of india", "sbi "],
+    "RELIANCE.NS": ["reliance industries", "ril ", "mukesh ambani", "jio"],
+}
 
 FEEDS = [
     "https://www.livemint.com/rss/markets",
