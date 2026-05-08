@@ -1,0 +1,19 @@
+name: poll
+on:
+  schedule:
+    - cron: "*/30 3-10 * * 1-5"
+  workflow_dispatch:
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install feedparser yfinance numpy httpx groq psycopg2-binary
+      - run: python poll.py
+        env:
+          SUPABASE_PG_DSN: ${{ secrets.SUPABASE_PG_DSN }}
+          GROQ_API_KEY:    ${{ secrets.GROQ_API_KEY }}
+          TG_BOT_TOKEN:    ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID:      ${{ secrets.TG_CHAT_ID }}
