@@ -1,0 +1,18 @@
+name: report
+on:
+  schedule:
+    - cron: "30 14 * * 0"
+  workflow_dispatch:
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install httpx psycopg2-binary
+      - run: python report.py
+        env:
+          SUPABASE_PG_DSN: ${{ secrets.SUPABASE_PG_DSN }}
+          TG_BOT_TOKEN:    ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID:      ${{ secrets.TG_CHAT_ID }}
