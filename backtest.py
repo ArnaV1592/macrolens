@@ -16,8 +16,10 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 
-WATCHLIST = ["SBIN.NS", "RELIANCE.NS", "INFY.NS", "TCS.NS", "LT.NS", "SBIN.NS"]
-
+WATCHLIST = [
+    "SBIN.NS",       # 65% hit, +0.35% avg
+    "RELIANCE.NS",   # 56% hit, +0.27% avg
+]
 LOOKBACK_DAYS = 20
 Z_THRESHOLD   = 4.0
 PERIOD        = "2y"   # bump to "5y" for stricter test
