@@ -1,0 +1,16 @@
+name: score
+on:
+  schedule:
+    - cron: "0 11 * * 1-5"
+  workflow_dispatch:
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install yfinance psycopg2-binary
+      - run: python score.py
+        env:
+          SUPABASE_PG_DSN: ${{ secrets.SUPABASE_PG_DSN }}
