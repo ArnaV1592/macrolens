@@ -143,7 +143,7 @@ def main():
               f"(your detector should clearly beat this)")
 
     print("\n  ── INTERPRETATION ──")
-    hr = df['hit_1d'].mean()*100
+    hr = df['hit_5d'].mean()*100
     if hr < 52:
         verdict = "❌ NO EDGE. Detector is at coin-flip. Don't paper trade this — fix it first."
     elif hr < 55:
