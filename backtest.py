@@ -21,7 +21,7 @@ WATCHLIST = [
     "RELIANCE.NS",   # 56% hit, +0.27% avg
 ]
 LOOKBACK_DAYS = 20
-Z_THRESHOLD   = 4.0
+Z_THRESHOLD   = 2.5
 PERIOD        = "2y"   # bump to "5y" for stricter test
 
 def backtest_one(symbol):
