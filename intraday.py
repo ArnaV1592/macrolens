@@ -22,11 +22,7 @@ GROQ_KEY = os.environ["GROQ_API_KEY"]
 TG_TOKEN = os.environ["TG_BOT_TOKEN"]
 TG_CHAT  = os.environ["TG_CHAT_ID"]
 
-WATCHLIST = [
-    "RELIANCE.NS", "TCS.NS", "HDFCBANK.NS", "INFY.NS", "ICICIBANK.NS",
-    "SBIN.NS", "ADANIENT.NS", "BHARTIARTL.NS", "LT.NS", "ITC.NS",
-    "AXISBANK.NS", "MARUTI.NS",
-]
+WATCHLIST = ["SBIN.NS", "RELIANCE.NS", "INFY.NS", "TCS.NS", "LT.NS", "SBIN.NS"]
 
 INTRADAY_Z_THRESHOLD = 3.0   # higher than daily — intraday is noisier
 LOOKBACK_SESSIONS    = 5
